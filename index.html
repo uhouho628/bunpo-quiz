@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<style>body{margin:0}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+<title>分詞・比較 4択ドリル</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Klee+One:wght@600&display=swap">
+<style>
+/* Layout: printed workbook page — white sheet, black type, red pen marking. One column. */
+:root {
+  --paper: #ffffff; --ink: #202020; --muted: #6e6e6e; --line: #d8d8d8; --faint: #f3f2f0;
+  --pen: #d3241b; --btn: #202020; --btn-ink: #ffffff;
+  --f-text: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --f-pen: "Klee One", "Hiragino Maru Gothic ProN", "Yu Gothic", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper:#1c1c1e; --ink:#e6e6e6; --muted:#9b9b9b; --line:#3a3a3d; --faint:#29292c; --pen:#ff6156; --btn:#e6e6e6; --btn-ink:#1c1c1e; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --paper:#1c1c1e; --ink:#e6e6e6; --muted:#9b9b9b; --line:#3a3a3d; --faint:#29292c; --pen:#ff6156; --btn:#e6e6e6; --btn-ink:#1c1c1e; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-text); font-size: 15px; line-height: 1.65; padding: 0 16px 56px; }
+.wrap { max-width: 640px; margin: 0 auto; }
+button, select, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-block: 24px 12px; border-bottom: 1px solid var(--line); }
+.top h1 { margin: 0; font-size: 20px; }
+.top .range { color: var(--muted); font-size: 13px; }
+.sec { padding-block: 20px; border-top: 1px solid var(--line); }
+.sec:first-child { border-top: 0; }
+h2 { font-size: 15px; margin: 0 0 8px; }
+h2 small { font-weight: 400; color: var(--muted); font-size: 13px; margin-left: 8px; }
+.form { display: grid; grid-template-columns: 6em minmax(0,1fr); gap: 10px 14px; align-items: baseline; }
+.form > .k { font-size: 13px; color: var(--muted); }
+.ctl { display: flex; flex-wrap: wrap; gap: 2px 18px; }
+.ctl label { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; cursor: pointer; }
+.ctl input { width: 16px; height: 16px; margin: 0; accent-color: var(--ink); }
+.ctl .n { color: var(--muted); font-size: 13px; }
+@media (max-width: 480px) { .form { grid-template-columns: 1fr; gap: 0; } .form > .k { margin-top: 10px; } }
+.btn { border: 1px solid var(--ink); background: var(--paper); border-radius: 3px; padding: 9px 16px; }
+.btn.primary { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); font-weight: 700; }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn.start { display: block; width: 100%; margin-top: 18px; padding: 13px; font-size: 16px; }
+.link { background: none; border: 0; padding: 4px 0; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.link.danger { color: var(--pen); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.sets { display: grid; gap: 22px; }
+.nums { margin: 0 0 8px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.nums b { color: var(--ink); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.cell { aspect-ratio: 1.2; max-width: 100%; border: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); padding: 0; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.cell.ok { background: var(--faint); color: var(--ink); }
+.cell.ng { background: var(--pen); color: #fff; }
+.cell.sel { outline: 2px solid var(--ink); outline-offset: -2px; }
+.detail { font-size: 13px; margin: 8px 0 0; min-height: 1.65em; }
+.note { font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+.qbar { display: flex; justify-content: space-between; align-items: center; padding-block: 14px 6px; font-variant-numeric: tabular-nums; }
+.qcount { color: var(--muted); font-size: 14px; }
+.progress { height: 2px; background: var(--line); }
+.progress span { display: block; height: 100%; background: var(--ink); transition: width .2s; }
+.q { padding-block: 26px 8px; }
+.qhead { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; position: relative; min-height: 2em; }
+.qnum { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.qmeta { color: var(--muted); font-size: 13px; }
+.mark { position: absolute; left: -10px; top: -26px; font-family: var(--f-pen); font-weight: 600; color: var(--pen); font-size: 54px; line-height: 1; pointer-events: none; transform: rotate(-8deg); }
+.en { font-size: 19px; margin: 14px 0 18px; overflow-wrap: anywhere; line-height: 1.75; }
+.blank { display: inline-block; min-width: 4em; text-align: center; padding: 0 .3em; }
+.blank.fill { font-family: var(--f-pen); font-weight: 600; color: var(--pen); }
+.choices { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.choice { display: flex; align-items: baseline; gap: 12px; width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); padding: 12px 6px; font-size: 18px; min-height: 52px; }
+.choice:hover:not(:disabled) { background: var(--faint); }
+.choice:disabled { cursor: default; }
+.choice .key { color: var(--muted); width: 1.4em; flex: none; }
+.choice .word { position: relative; min-width: 0; overflow-wrap: anywhere; }
+.choice.is-ok .word::after { content: ""; position: absolute; inset: -5px -12px; border: 2px solid var(--pen); border-radius: 50%; transform: rotate(-4deg); }
+.choice.is-ng .word { text-decoration: line-through; text-decoration-color: var(--pen); text-decoration-thickness: 2px; }
+.feedback { padding-top: 14px; min-height: 64px; }
+.ex { font-size: 15px; margin: 0 0 12px; padding: 10px 12px; background: var(--faint); border-radius: 3px; }
+.ex b { color: var(--pen); }
+.feedback .row { display: flex; justify-content: flex-end; }
+.feedback .btn { min-width: 7em; }
+.hint { color: var(--muted); font-size: 12px; margin: 6px 0 0; }
+@media (hover: none) { .hint { display: none; } }
+.score { display: flex; align-items: baseline; gap: 16px; padding-block: 26px 4px; }
+.pts { font-family: var(--f-pen); font-weight: 600; color: var(--pen); font-size: 60px; line-height: 1; font-variant-numeric: tabular-nums; }
+.pts small { font-size: 28px; }
+.sub { color: var(--muted); font-size: 13px; margin: 6px 0 18px; }
+.mlist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.mlist li { padding: 10px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.mlist .no { color: var(--muted); font-size: 13px; }
+.mlist .s { font-size: 15px; overflow-wrap: anywhere; }
+.mlist .s b { color: var(--pen); }
+.mlist .e { font-size: 13px; color: var(--muted); }
+.hist { list-style: none; margin: 0; padding: 0; }
+.hist li { display: flex; gap: 14px; padding: 6px 0; font-size: 14px; border-bottom: 1px solid var(--faint); font-variant-numeric: tabular-nums; }
+.hist .when { color: var(--muted); width: 84px; flex: none; }
+.hist .what { flex: 1; min-width: 0; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <h1>分詞・比較 4択ドリル</h1>
+    <span class="range">第6章 分詞 132–148 ／ 第7章 比較 155–189</span>
+  </header>
+
+  <section id="v-home">
+    <div class="sec">
+      <div class="form">
+        <span class="k">範囲</span>
+        <div class="ctl" id="f-ch">
+          <label><input type="checkbox" value="6" checked>第6章 分詞 <span class="n">17問</span></label>
+          <label><input type="checkbox" value="7" checked>第7章 比較 <span class="n">35問</span></label>
+        </div>
+        <span class="k">出す問題</span>
+        <div class="ctl" id="f-mode">
+          <label><input type="radio" name="mode" value="all" checked>全部</label>
+          <label><input type="radio" name="mode" value="last">この前まちがえた<span class="n" id="n-last"></span></label>
+          <label><input type="radio" name="mode" value="ever">一度でもまちがえた<span class="n" id="n-ever"></span></label>
+          <label><input type="radio" name="mode" value="new">まだやってない<span class="n" id="n-new"></span></label>
+        </div>
+        <span class="k">順番</span>
+        <div class="ctl" id="f-order">
+          <label><input type="radio" name="order" value="num" checked>問題番号順</label>
+          <label><input type="radio" name="order" value="shuffle">シャッフル</label>
+        </div>
+        <span class="k">オプション</span>
+        <div class="ctl">
+          <label><input type="checkbox" id="f-mix">選択肢の順番も入れ替える</label>
+        </div>
+      </div>
+      <button class="btn primary start" id="start">はじめる</button>
+    </div>
+    <div class="sec">
+      <div class="sets" id="sets"></div>
+      <p class="note">マスを押すと答えと解説が出ます。149〜154 は写真がなかったので入っていません。</p>
+    </div>
+    <div class="sec">
+      <h2>記録</h2>
+      <ul class="hist" id="hist"></ul>
+      <div class="actions" style="margin-top:12px" id="reset-area"></div>
+    </div>
+  </section>
+
+  <section id="v-quiz" hidden>
+    <div class="qbar"><button class="link" id="quit">やめる</button><span class="qcount" id="qcount"></span></div>
+    <div class="progress"><span id="prog"></span></div>
+    <article class="q">
+      <div class="qhead">
+        <span class="mark" id="mark" aria-hidden="true"></span>
+        <span class="qnum" id="qnum"></span>
+        <span class="qmeta" id="qmeta"></span>
+      </div>
+      <p class="en" id="qen"></p>
+      <ol class="choices" id="choices"></ol>
+      <div class="feedback" id="feedback"></div>
+      <p class="hint">1〜4 キーで選べます。Enter で次へ。</p>
+    </article>
+  </section>
+
+  <section id="v-result" hidden>
+    <div class="score"><span class="pts" id="r-pts"></span><span id="r-pct" style="font-size:18px"></span></div>
+    <p class="sub" id="r-label"></p>
+    <div class="actions" id="r-actions"></div>
+    <div class="sec" style="margin-top:22px">
+      <h2 id="r-title">まちがえた問題</h2>
+      <ul class="mlist" id="r-miss"></ul>
+    </div>
+  </section>
+</div>
+
+<script>
+// [番号, KEY POINT, 問題文(__=空所), 選択肢, 正解(0始まり), 出典, 解説]
+const D = [
+[132,"035","My bicycle is completely broken, but the shop __ new bicycles is closed today.",["is selling","selling","sells","sold"],1,"立命館大","the shop を後ろから修飾する分詞。「新しい自転車を売っている店」は能動 → 現在分詞 selling。"],
+[133,"035","A: Do you know that Chris had a skiing accident?\nB: Yes. He has a __ leg, but I think he'll be OK.",["breaking","broke","broken","break"],2,"法政大","分詞1語は名詞の前に置く。脚は「折られた」→ 過去分詞 broken。"],
+[134,"036","He remained __ on the bed.",["lie","lying","to lie","lain"],1,"関西大","remain C の C に分詞。「ベッドに横たわったままだった」は能動 → lying。"],
+[135,"036","John sat __ by girls.",["surround","surrounded","to surround","surrounding"],1,"高知工科大","sit C。ジョンは女の子たちに「囲まれて」座っていた → 受動の surrounded。"],
+[136,"037","Professor Smith, I'm very sorry to have kept you __ so long.",["wait","waited","waiting","to wait"],2,"南山大","keep O doing「Oを〜させておく」。you と wait は能動の関係 → waiting。"],
+[137,"037","I asked her to keep me __ of any new developments in the matter.",["informing","to inform","informed","information"],2,"専修大","inform A of B「AにBを知らせる」。me は知らされる側 → keep A informed of B。"],
+[138,"037","I couldn't make myself __ above the noise of the traffic.",["hearing","heard","having heard","to hear"],1,"北里大","make oneself heard「自分の声を相手に届かせる」。myself は「聞かれる」側 → heard。"],
+[139,"037","The children are outside. I can see them __ in the garden.",["to play","to be playing","playing","being played"],2,"東邦大","see O doing「Oが〜しているのを見る」。them と play は能動 → playing。"],
+[140,"038","__ exactly the same job, he understands my situation better.",["Doing","Doing as","For doing","That we are doing"],0,"立命館大","理由を表す分詞構文。Because he does exactly the same job → Doing …。"],
+[141,"038","__ what to say, Travis remained silent all through the meeting.",["Knowing not","Knowing nothing","Not knowing","No knowing"],2,"高知大","分詞構文の否定は not を分詞の直前に置く → Not knowing。"],
+[142,"038","Several former classmates gathered for lunch, __ their high school reunion the night before.",["having attended","attending","having been attending","being attended"],0,"慶應義塾大","同窓会に出たのは「前の晩」で、昼食より前 → 完了分詞構文 having attended。"],
+[143,"038","__ from a distance, the rock looked like a human face.",["Saw","Seeing","Seen","To see"],2,"近畿大","主語 the rock は「見られる」側 → 過去分詞で始まる分詞構文（Being が省略された形）。"],
+[144,"038","__ fine, I went out for a walk with my dog.",["Because being","Being","It being","It is"],2,"近畿大","独立分詞構文。天候の it は主節の主語 I と違うので残す → It being fine。"],
+[145,"038","__ being no public bus service, I had to run to catch the train as soon as possible.",["They","There","It","It is"],1,"青山学院大","there is A を分詞構文にすると there being A。"],
+[146,"039","All things __, she is the best candidate for the position.",["considering","considered","to consider","consider"],1,"日本大","慣用的な分詞構文 all things considered「あらゆることを考慮すると」。"],
+[147,"040","She said goodbye to her uncle with tears __ down her cheeks. She knew that she would never see him again.",["run","running","ran","to run"],1,"玉川大","with O doing「Oが〜している状態で」。涙が頬を「流れている」→ running。"],
+[148,"040","The basketball player made the free throw for the victory with only 2.2 seconds __ on the clock.",["leave","leaving","left","to leave"],2,"立命館大","with O done。2.2秒が「残されて」いる → left。"],
+[155,"041","My girlfriend and I were born on the same day of the same year. She is __ I am.",["as old as","older than","the oldest","younger than"],0,"秋田県立大","同じ年の同じ日に生まれた → 同い年。as + 原級 + as。"],
+[156,"041","Osaka is not __ as Tokyo.",["big","the biggest","as big","bigger"],2,"芝浦工業大","not as[so] + 原級 + as A「Aほど〜ではない」。"],
+[157,"042","The manufacturer decided to hire __ temporary laborers as last year.",["as many twice","as twice as","double as many","twice as many"],3,"名古屋市立大","倍数 + as + 原級 + as。名詞が入るので twice as many + 複数名詞 + as。"],
+[158,"042","This report has taken me __ as long to write as I had imagined.",["third time","three time","three times","times three"],2,"立命館大","3倍以上は「数 + times」を as の前に置く → three times as long as。"],
+[159,"042","Our new computer is about __ a conventional one.",["half size","half the size of","half of the size","the half size"],1,"南山大","倍数 + the + 名詞 + of A「Aの〜倍の…」→ half the size of A。"],
+[160,"043","A man's worth is to be estimated not so much by his social position __ by his character.",["as","as well","rather","than"],0,"鹿児島大","not so much A as B「AというよりむしろB」。"],
+[161,"043","A: How often do you visit your grandparents?\nB: I try to see them __ possible.",["as much as","even if","more than","the most"],0,"学習院大","as + 原級 + as possible「できるだけ〜」。ここは much（たくさん）。"],
+[162,"043","Read this book __.",["as carefully as you can","as carefully as you possible","so carefully as possible","so carefully as you can"],0,"金城学院大","as + 原級 + as S can = as 〜 as possible。肯定文で so 〜 as は使わない。"],
+[163,"043","It has been estimated that __ one hundred thousand people took part in the demonstration.",["much","as more as","as many as","more"],2,"青山学院大","as many as + 数「〜も（多くの数の）」。"],
+[164,"044","Dull knives are actually more dangerous to use __.",["as ones that are sharp","as sharp ones","than are sharp ones","than sharp ones"],3,"東京理科大","比較級 + than A。more dangerous to use than sharp ones（ones = knives）。"],
+[165,"044","His account of the affair is __ we first thought.",["reliable to than","more reliable from than","reliable than","more reliable than"],3,"東海大","比較級 + than S think「Sが思っていたより〜」。"],
+[166,"044","The subway is safe during the day but __ at night.",["less safe","less safer","lesser safe","more safer"],0,"関西外大","less + 原級「…ほど〜でない」。less の後ろは原級。"],
+[167,"045","The procedures for starting a new study in our institute are __ more complicated than in your organization.",["any","much","too","very"],1,"立命館大","比較級の強調は much / far / even / still など。very は使えない。"],
+[168,"046","The more John heard about it, __ he liked it.",["more","much","the less","the much"],2,"立命館大","the + 比較級 …, the + 比較級 〜「…すればするほど〜」。"],
+[169,"046","Mary is __ of the two girls I introduced to you yesterday.",["taller","the taller","tallest","tall"],1,"関西学院大","the + 比較級 + of the two「2人のうちで〜な方」。"],
+[170,"046","She began to study __ harder because she got a good grade.",["all the","none the","all more","none other"],0,"駒澤大","(all) the + 比較級 + because …「…なのでそれだけいっそう〜」。"],
+[171,"047","She spent a month in the hospital, but she is __ the better for it.",["even","by far","none","still"],2,"兵庫医療大","none the + 比較級 + for …「…だからといって少しも〜ない」。"],
+[172,"047","Bill lives in a big house, but his room is __ bigger than mine.",["less","many","more","no"],3,"近畿大","no + 比較級 + than A は「Aと同じで〜でない」。no bigger than mine＝私の部屋と同じくらい小さい。"],
+[173,"047","A bat is __ a bird than a rat is.",["no more","no less","not more","not less"],0,"桜美林大","A is no more B than C is (D)「AがBでないのはCがDでないのと同じ」（クジラの構文）。"],
+[174,"047","My students were few in number, __ four or five altogether.",["as many as","as little as","no less than","no more than"],3,"千葉商科大","no more than A = only A「わずかA」。few in number と意味が合う。"],
+[175,"047","Chimpanzees and human beings were separated from their common ancestors __ six million years ago.",["no less than","no other than","so old that","so that"],0,"関西学院大","no less than A = as many[much] as A「Aも（多くの）」。"],
+[176,"048","It now seems a fact __ just a possibility.",["as much","but never","only","rather than"],3,"学習院大","B rather than A「AというよりむしろB」。"],
+[177,"049","He knew __ than to ask such a stupid question.",["more","sooner","great","better"],3,"名城大","know better than to do「〜するほど愚かではない」。"],
+[178,"049","I can't even sing easy children's songs well, __ jazz.",["even harder","in fact","much less","still more"],2,"関西学院大","否定文 + much[still] less A「ましてAはない」。still more は肯定文で使う。"],
+[179,"049","It is __ to fly to the moon.",["not dream any longer","no longer a dream","no a longer dream","not longer dream"],1,"法政大","no longer = not … any longer「もはや〜ない」。no longer a dream の語順。"],
+[180,"050","This car is superior in design __ other cars.",["than","to","as","for"],1,"東海大","ラテン比較級 be superior to A「Aより優れている」。than ではなく to。"],
+[181,"050","He __ bread for breakfast.",["prefers rice than","prefers rice more than","prefers rice for","prefers rice to"],3,"名城大","prefer A to B「BよりもAを好む」。"],
+[182,"051","__ the islands that make up Japan, Honshu is the largest.",["With","Of","In","From"],1,"岩手歯科大","最上級と使う of + 複数名詞「〜の中で」が文頭に出た形。"],
+[183,"051","The last question was __ one for the students to answer. Only Jennifer marked the correct answer.",["easier","less easy","the easiest","the least easy"],3,"日本大","the least + 原級「最も〜でない」。正解者は1人 → 一番やさしくない（難しい）問題。"],
+[184,"051","It is one of __ structured arguments.",["the most properly","the more proper","much properly","very proper"],0,"法政大","one of the + 最上級 + 複数名詞。structured を修飾する副詞の最上級 the most properly。"],
+[185,"051","The film I saw last night was the most exciting one I've __ seen.",["always","before","ever","not"],2,"関西学院大","the + 最上級 + 名詞 + (that) S have ever done「今まで〜した中で一番…」。"],
+[186,"051","Is it true that Osaka is the third __ city in Japan?",["as large as","large","larger than","largest"],3,"明星大","the + 序数 + 最上級「〜番目に…な」。"],
+[187,"052","That is __ the worst movie I have ever seen.",["much up","more","by far","over again"],2,"東海大","最上級の強調は by far / much / very など → by far the worst。"],
+[188,"053","Professor Jones is stricter than __ teacher in our department.",["any other","other","each other","one another"],0,"南山大","比較級 + than any other + 単数名詞 で最上級の意味。"],
+[189,"053","__ is so precious as time.",["Anything","Everything","Nothing","Something"],2,"日本大","Nothing is so[as] + 原級 + as A「Aほど〜なものはない」で最上級の意味。"]
+];
+const QS = {}, ORDER = [];
+D.forEach(([n, kp, en, o, a, src, ex]) => { QS[n] = { n, kp, en, o, a, src, ex, ch: n < 150 ? 6 : 7 }; ORDER.push(n); });
+const CH = { 6: "第6章 分詞", 7: "第7章 比較" };
+const MARK = ["①", "②", "③", "④"];
+const $ = id => document.getElementById(id);
+const esc = t => String(t).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+// 記録: q[番号] = [正解数, ミス数, 直近(1/0), 時刻]
+const LS = "bunpo-quiz-v1", LS_PREF = "bunpo-quiz-pref";
+let store = { q: {}, hist: [] };
+try { const s = JSON.parse(localStorage.getItem(LS) || "null"); if (s && s.q) store = { q: s.q, hist: Array.isArray(s.hist) ? s.hist : [] }; } catch (e) {}
+const save = () => { try { localStorage.setItem(LS, JSON.stringify(store)); } catch (e) {} };
+const st = n => store.q[n];
+const isLast = n => !!st(n) && st(n)[2] === 0;
+const isEver = n => !!st(n) && st(n)[1] > 0;
+const isNew = n => !st(n);
+const FILTER = { all: () => true, last: isLast, ever: isEver, new: isNew };
+const MODE_L = { all: "", last: "この前まちがえた", ever: "一度でもまちがえた", new: "まだやってない" };
+
+function readSetup() {
+  return {
+    ch: [...document.querySelectorAll("#f-ch input:checked")].map(i => +i.value),
+    mode: document.querySelector("#f-mode input:checked").value,
+    order: document.querySelector("#f-order input:checked").value,
+    mix: $("f-mix").checked,
+  };
+}
+try {
+  const p = JSON.parse(localStorage.getItem(LS_PREF) || "{}");
+  if (Array.isArray(p.ch)) document.querySelectorAll("#f-ch input").forEach(i => i.checked = p.ch.includes(+i.value));
+  if (p.order) { const el = document.querySelector(`#f-order input[value="${p.order}"]`); if (el) el.checked = true; }
+  if (p.mix != null) $("f-mix").checked = !!p.mix;
+} catch (e) {}
+const savePref = () => { const c = readSetup(); try { localStorage.setItem(LS_PREF, JSON.stringify({ ch: c.ch, order: c.order, mix: c.mix })); } catch (e) {} };
+
+function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+const base = c => ORDER.filter(n => c.ch.includes(QS[n].ch));
+function queue(c) { const k = base(c).filter(FILTER[c.mode]); return c.order === "shuffle" ? shuffle(k) : k; }
+function label(c) { return [c.ch.map(x => CH[x]).join("・"), MODE_L[c.mode], c.order === "shuffle" ? "シャッフル" : ""].filter(Boolean).join("　"); }
+
+let view = "home";
+function show(v) { view = v; ["home", "quiz", "result"].forEach(x => $("v-" + x).hidden = x !== v); window.scrollTo({ top: 0 }); }
+
+let sel = null, confirmReset = false;
+function renderHome() {
+  const c = readSetup(), b = base(c);
+  $("n-last").textContent = `（${b.filter(isLast).length}）`;
+  $("n-ever").textContent = `（${b.filter(isEver).length}）`;
+  $("n-new").textContent = `（${b.filter(isNew).length}）`;
+  const n = queue(c).length;
+  $("start").disabled = n === 0;
+  $("start").textContent = n === 0 ? (c.ch.length ? "あてはまる問題がありません" : "範囲を選んでください") : `${n}問はじめる`;
+  $("sets").innerHTML = [6, 7].map(ch => {
+    const keys = ORDER.filter(k => QS[k].ch === ch);
+    let ok = 0, ng = 0, tc = 0, tw = 0;
+    keys.forEach(k => { const e = st(k); if (!e) return; tc += e[0]; tw += e[1]; e[2] ? ok++ : ng++; });
+    const rate = tc + tw ? Math.round(tc / (tc + tw) * 100) + "%" : "－";
+    const cells = keys.map(k => { const e = st(k); return `<button class="cell ${!e ? "" : e[2] ? "ok" : "ng"}${sel === k ? " sel" : ""}" data-k="${k}">${k}</button>`; }).join("");
+    let det = "";
+    if (sel && QS[sel].ch === ch) { const q = QS[sel], e = st(sel); det = `<b>${sel}</b>　${MARK[q.a]} <b style="color:var(--pen)">${esc(q.o[q.a])}</b>　${esc(q.ex)}　<span style="color:var(--muted)">${e ? `○${e[0]} ×${e[1]}` : "まだ"}</span>`; }
+    return `<div><h2>${CH[ch]}<small>${keys[0]}–${keys[keys.length - 1]}</small></h2>
+      <p class="nums">正解 <b>${ok}</b>　ミス <b style="color:var(--pen)">${ng}</b>　まだ <b>${keys.length - ok - ng}</b>　／　正答率 <b>${rate}</b></p>
+      <div class="grid">${cells}</div><p class="detail">${det}</p></div>`;
+  }).join("");
+  const h = store.hist.slice(0, 8);
+  $("hist").innerHTML = h.length ? h.map(x => { const d = new Date(x.t); return `<li><span class="when">${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}</span><span class="what">${esc(x.label)}</span><span>${x.c}/${x.n}</span></li>`; }).join("") : `<li style="color:var(--muted)">まだありません</li>`;
+  $("reset-area").innerHTML = !Object.keys(store.q).length ? "" : confirmReset
+    ? `<span>記録を全部消しますか？</span><button class="btn" id="rs-yes">消す</button><button class="link" id="rs-no">やめる</button>`
+    : `<button class="link danger" id="rs">記録をリセット</button>`;
+  if ($("rs")) $("rs").onclick = () => { confirmReset = true; renderHome(); };
+  if ($("rs-no")) $("rs-no").onclick = () => { confirmReset = false; renderHome(); };
+  if ($("rs-yes")) $("rs-yes").onclick = () => { store = { q: {}, hist: [] }; save(); confirmReset = false; sel = null; renderHome(); };
+}
+$("sets").addEventListener("click", e => { const b = e.target.closest(".cell"); if (!b) return; sel = sel === +b.dataset.k ? null : +b.dataset.k; renderHome(); });
+["f-ch", "f-mode", "f-order", "f-mix"].forEach(id => $(id).addEventListener("change", () => { savePref(); renderHome(); }));
+$("start").onclick = () => { const c = readSetup(), k = queue(c); if (k.length) startQuiz(k, label(c), c.mix); };
+
+let S = null;
+function startQuiz(keys, lab, mix) { S = { keys, i: 0, res: [], lab, mix, picked: null, perm: null }; show("quiz"); renderQ(); }
+function sentence(q, filled) {
+  const inner = filled ? esc(q.o[q.a]) : "&emsp;&emsp;&emsp;";
+  return q.en.split("__").map(esc).join(`(<span class="blank${filled ? " fill" : ""}">${inner}</span>)`).replace(/\n/g, "<br>");
+}
+function renderQ() {
+  const n = S.keys[S.i], q = QS[n], total = S.keys.length;
+  S.perm = S.mix ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3];
+  S.picked = null;
+  $("prog").style.width = (S.i / total * 100) + "%";
+  $("qcount").textContent = `${S.i + 1} / ${total}`;
+  $("mark").textContent = "";
+  $("qnum").textContent = n;
+  const e = st(n);
+  $("qmeta").textContent = `KEY POINT ${q.kp}　〈${q.src}〉` + (e ? `　○${e[0]} ×${e[1]}` : "");
+  $("qen").innerHTML = sentence(q, false);
+  $("choices").innerHTML = S.perm.map((oi, pos) => `<li><button class="choice" data-o="${oi}"><span class="key">${MARK[pos]}</span><span class="word">${esc(q.o[oi])}</span></button></li>`).join("");
+  $("feedback").innerHTML = "";
+}
+function pick(oi) {
+  if (!S || S.picked != null) return;
+  const n = S.keys[S.i], q = QS[n], ok = oi === q.a;
+  S.picked = oi;
+  const e = store.q[n] ? store.q[n].slice() : [0, 0, 0, 0];
+  ok ? e[0]++ : e[1]++; e[2] = ok ? 1 : 0; e[3] = Date.now();
+  store.q[n] = e; save();
+  S.res.push({ n, pick: oi, ok });
+  document.querySelectorAll("#choices .choice").forEach(b => {
+    const j = +b.dataset.o; b.disabled = true;
+    if (j === q.a) b.classList.add("is-ok"); else if (j === oi) b.classList.add("is-ng");
+  });
+  $("mark").textContent = ok ? "○" : "×";
+  $("qen").innerHTML = sentence(q, true);
+  const last = S.i === S.keys.length - 1;
+  $("feedback").innerHTML = `<p class="ex"><b>${ok ? "正解" : "正解は " + esc(q.o[q.a])}</b>　${esc(q.ex)}</p><div class="row"><button class="btn primary" id="next">${last ? "おわり" : "次へ"}</button></div>`;
+  $("next").onclick = next;
+  $("next").focus({ preventScroll: true });
+}
+function next() { if (!S || S.picked == null) return; if (S.i < S.keys.length - 1) { S.i++; renderQ(); window.scrollTo({ top: 0 }); } else finish(); }
+let lastRes = null;
+function finish() {
+  const s = S; S = null;
+  if (!s.res.length) { renderHome(); show("home"); return; }
+  const c = s.res.filter(r => r.ok).length;
+  store.hist.unshift({ t: Date.now(), label: s.lab, n: s.res.length, c }); store.hist = store.hist.slice(0, 40); save();
+  lastRes = s;
+  $("r-pts").innerHTML = `${c}<small>/${s.res.length}</small>`;
+  $("r-pct").textContent = Math.round(c / s.res.length * 100) + "%";
+  $("r-label").textContent = s.lab + (s.res.length < s.keys.length ? `（${s.keys.length}問中 ${s.res.length}問でやめた）` : "");
+  const miss = s.res.filter(r => !r.ok);
+  $("r-title").textContent = miss.length ? `まちがえた問題（${miss.length}）` : "全問正解";
+  $("r-miss").innerHTML = miss.map(r => { const q = QS[r.n]; return `<li><span class="no">${r.n}　KEY POINT ${q.kp}　あなたの答え：${esc(q.o[r.pick])}</span><span class="s">${q.en.split("__").map(esc).join(`(<b>${esc(q.o[q.a])}</b>)`).replace(/\n/g, " ")}</span><span class="e">${esc(q.ex)}</span></li>`; }).join("");
+  $("r-actions").innerHTML = (miss.length ? `<button class="btn primary" id="r-retry">まちがえた${miss.length}問をもう一度</button>` : "") + `<button class="btn" id="r-home">出題画面へ</button>`;
+  if ($("r-retry")) $("r-retry").onclick = () => startQuiz(miss.map(r => r.n), "まちがえた問題のやり直し", s.mix);
+  $("r-home").onclick = () => { renderHome(); show("home"); };
+  show("result");
+}
+$("choices").addEventListener("click", e => { const b = e.target.closest(".choice"); if (b) pick(+b.dataset.o); });
+$("quit").onclick = finish;
+document.addEventListener("keydown", e => {
+  if (view !== "quiz" || !S || e.metaKey || e.ctrlKey || e.altKey) return;
+  const idx = "1234".indexOf(e.key);
+  if (idx >= 0 && e.key.length === 1) { e.preventDefault(); pick(S.perm[idx]); return; }
+  if (e.key === "Enter" && S.picked != null) { e.preventDefault(); next(); }
+});
+renderHome();
+</script>
+</body>
+</html>
